@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blog | La Caffettiera{% endblock %}
+
+{% block background %}src={% static "core/img/products-01.jpg" %}{% endblock %}
+
+{% block headers %}
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">L'autentico caffè d'italia</span>
+      <span class="site-heading-lower">La Caffettiera</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="text-center rounded mb-4 text-white">
+                    <h1 class="section-heading mb-5">{{ category.name }}</h1>
+                </div>
+                {% for post in Posts %}
+                    <div class="bg-faded p-5 rounded mb-4">
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-lower">{{ post.title }}</span>
+                        </h2>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-3">
+                        {% endif %}
+                        <p>{{ post.content|linebreaksbr }}</p>
+                    </div>
+                {% empty %}
+                    <p class="text-center">No hay publicaciones en esta categoría.</p>
+                {% endfor %}
+                <div class="text-center mt-xl-5">
+                    <a href="{% url 'blog' %}" class="text-dark text-decoration-none">Ver todos los blogs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

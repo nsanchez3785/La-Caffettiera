@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ politica.get_tipo_display }} | La Caffettiera{% endblock %}
+
+{% block content %}
+<section class="page-section cta">
+    <div class="container">
+        <div class="bg-faded p-5 rounded">
+            <h2 class="text-center mb-4">{{ politica.get_tipo_display }}</h2>
+            <div>{{ politica.descripcion|linebreaks }}</div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
