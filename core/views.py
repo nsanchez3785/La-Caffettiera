@@ -10,7 +10,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 def contact(request):
-    return render(request, 'core/contact.html')
+    return render(request, 'core/../contact/templates/contact/contact.html')
 
 def blog(request):
     posts = Post.objects.filter(published=True)

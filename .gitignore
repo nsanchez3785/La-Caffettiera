@@ -1,0 +1,10 @@
+# Django
+.venv/
+__pycache__/
+*.py[cod]
+.env
+db.sqlite3
+staticfiles/
+
+# Credenciales de Mailtrap
+email_config.py
