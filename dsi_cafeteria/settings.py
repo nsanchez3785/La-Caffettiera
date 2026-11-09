@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-from email.mime.text import *
+from email_config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,4 +143,4 @@ EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = 'La Caffettiera <contacto@lacaffettiera.com>'
-CONTACT_EMAIL = 'TU_CORREO_DE_DESTINO'
+CONTACT_EMAIL = 'nsanchez3785@utm.edu.ec'
