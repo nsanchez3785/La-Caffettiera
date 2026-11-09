@@ -1,4 +1,12 @@
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'c49ee884ba91ff'
-EMAIL_HOST_PASSWORD = '26de620e1a157d'
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        "OPTIONS": {
+            "host": "sandbox.smtp.mailtrap.io",
+            "port": 2525,
+            "username": "c49ee884ba91ff",
+            "password": "26de620e1a157d",
+            "use_tls": True,
+        },
+    },
+}

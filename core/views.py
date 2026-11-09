@@ -10,7 +10,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 def contact(request):
-    return render(request, 'core/../contact/templates/contact/contact.html')
+    return render(request, 'contact/contact.html')
 
 def blog(request):
     posts = Post.objects.filter(published=True)
@@ -30,9 +30,6 @@ def category_posts(request, category_id):
         'Posts': posts,
         'category': category,
     })
-
-def services(request):
-    return render(request, 'servicios/services.html')
 
 def services(request):
     services = Services.objects.all()
