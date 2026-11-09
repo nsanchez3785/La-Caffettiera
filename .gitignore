@@ -5,6 +5,3 @@ __pycache__/
 .env
 db.sqlite3
 staticfiles/
-
-# Credenciales de Mailtrap
-email_config.py

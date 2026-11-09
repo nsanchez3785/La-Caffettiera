@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-from email_config import MAILERS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,8 +125,17 @@ STATIC_URL = 'static/'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-DEFAULT_FROM_EMAIL = 'La Caffettiera <contacto@lacaffettiera.com>'
-CONTACT_EMAIL = 'nsanchez3785@utm.edu.ec'
+from decouple import config
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "sandbox.smtp.mailtrap.io"
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = "La Caffettiera <contacto@lacaffettiera.com>"
+CONTACT_EMAIL = "nsanchez3785@utm.edu.ec"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'dsi_cafeteria' / 'media'
